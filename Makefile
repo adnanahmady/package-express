@@ -14,9 +14,13 @@ up:
 	@$(shell touch .backend/bash_history)
 	@docker-compose up -d ${options}
 
+build:
+	@${MAKE} up options="--build"
+
 down:
 	@docker-compose down
 
+ps: status
 status:
 	@docker-compose ps
 
