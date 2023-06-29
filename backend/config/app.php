@@ -167,6 +167,7 @@ return [
         /*
          * Package Service Providers...
          */
+        MStaack\LaravelPostgis\DatabaseServiceProvider::class,
 
         /*
          * Application Service Providers...
