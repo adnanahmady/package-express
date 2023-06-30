@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources\Api\V1\Partners\Stored;
+namespace App\Http\Resources\Api\V1\Partners\Shared;
 
 interface RelationContract
 {

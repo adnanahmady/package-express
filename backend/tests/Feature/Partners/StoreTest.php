@@ -8,11 +8,7 @@ use App\Contracts\Models\MultiPolygonContract;
 use App\Contracts\Models\PartnerContract;
 use App\Contracts\Models\PointContract;
 use App\Http\Requests\Api\V1\Partners\Store\StoreContract;
-use App\Http\Resources\Api\V1\Partners\Stored\AddressResource;
-use App\Http\Resources\Api\V1\Partners\Stored\CoverageAreaResource;
-use App\Http\Resources\Api\V1\Partners\Stored\DataResource;
-use App\Http\Resources\Api\V1\Partners\Stored\MetaResource;
-use App\Http\Resources\Api\V1\Partners\Stored\PaginatorResource;
+use App\Http\Resources\Api\V1\Partners\Stored;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Testing\TestResponse;
 use Tests\TestCase;
@@ -187,14 +183,14 @@ class StoreTest extends TestCase
         $request = $this->getData();
 
         $data = $this->request(data: $request)->json(join('.', [
-            PaginatorResource::META,
-            MetaResource::COVERAGE_AREA,
+            Stored\PaginatorResource::META,
+            Stored\MetaResource::COVERAGE_AREA,
         ]));
 
         $this->assertArrayHasKeys([
-            CoverageAreaResource::ID,
-            CoverageAreaResource::TYPE,
-            CoverageAreaResource::COORDINATES,
+            Stored\CoverageAreaResource::ID,
+            Stored\CoverageAreaResource::TYPE,
+            Stored\CoverageAreaResource::COORDINATES,
         ], $data);
     }
 
@@ -204,14 +200,14 @@ class StoreTest extends TestCase
         $request = $this->getData();
 
         $data = $this->request(data: $request)->json(join('.', [
-            PaginatorResource::META,
-            MetaResource::ADDRESS,
+            Stored\PaginatorResource::META,
+            Stored\MetaResource::ADDRESS,
         ]));
 
         $this->assertArrayHasKeys([
-            AddressResource::ID,
-            AddressResource::TYPE,
-            AddressResource::COORDINATES,
+            Stored\AddressResource::ID,
+            Stored\AddressResource::TYPE,
+            Stored\AddressResource::COORDINATES,
         ], $data);
     }
 
@@ -220,14 +216,14 @@ class StoreTest extends TestCase
         $this->withoutExceptionHandling();
         $request = $this->getData();
 
-        $data = $this->request(data: $request)->json(PaginatorResource::DATA);
+        $data = $this->request(data: $request)->json(Stored\PaginatorResource::DATA);
 
-        $this->assertIsString($data[DataResource::ID]);
-        $this->assertIsString($data[DataResource::OWNER_NAME]);
-        $this->assertIsString($data[DataResource::TRADING_NAME]);
-        $this->assertIsString($data[DataResource::DOCUMENT]);
-        $this->assertIsInt($data[DataResource::ADDRESS]);
-        $this->assertIsInt($data[DataResource::COVERAGE_AREA]);
+        $this->assertIsString($data[Stored\DataResource::ID]);
+        $this->assertIsString($data[Stored\DataResource::OWNER_NAME]);
+        $this->assertIsString($data[Stored\DataResource::TRADING_NAME]);
+        $this->assertIsString($data[Stored\DataResource::DOCUMENT]);
+        $this->assertIsInt($data[Stored\DataResource::ADDRESS]);
+        $this->assertIsInt($data[Stored\DataResource::COVERAGE_AREA]);
     }
 
     public function test_it_should_store_the_partner_data_in_database(): void

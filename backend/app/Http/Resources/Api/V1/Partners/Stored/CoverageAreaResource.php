@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\Api\V1\Partners\Stored;
 
+use App\Http\Resources\Api\V1\Partners\Shared\GeoContract;
 use App\Models\CoverageArea;
 use Illuminate\Http\Resources\Json\JsonResource;
 

@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Resources\Api\V1\Partners\Stored;
+namespace App\Http\Resources\Api\V1\Partners\Show;
 
 use App\Http\Resources\Api\V1\Partners\Shared\GeoContract;
-use App\Models\Address;
+use App\Models\CoverageArea;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class AddressResource extends JsonResource implements GeoContract
+class CoverageAreaResource extends JsonResource implements GeoContract
 {
     /**
-     * @var Address
+     * @var CoverageArea
      */
     public $resource;
 
