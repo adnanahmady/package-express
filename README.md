@@ -8,6 +8,7 @@ This application provides an API (Application Programming Interface) to deliver 
 * [Usage](#usage)
   * [Run the application](#run-application)
 * [Tests](#tests)
+* [Database Diagram](#diagram)
 
 ## Structure
 
@@ -50,3 +51,14 @@ bellow command.
 make test
 ```
 
+# Diagram
+
+The code table is `partners` table.
+
+The reason that I have implemented the address with a free type
+is if in future there be any need to change the address of the
+partner from point to for example a multipoint the relations be
+correct. and using the polymorphic relation the type of the field
+can you restored again.
+
+![Database diagram](.assets/package-express.png)
