@@ -4,10 +4,11 @@ namespace App\Models;
 
 use App\Contracts\Models\AddressContract;
 use App\Contracts\Models\CoordinationContract;
-use App\ValueObjects\GeoValues\AddressGeo;
 use App\ValueObjects\GeoValues\GeoObjectInterface;
+use App\ValueObjects\GeoValues\PointObject;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Address extends Model implements AddressContract
@@ -28,12 +29,15 @@ class Address extends Model implements AddressContract
         return $this->morphTo();
     }
 
+    public function partner(): BelongsTo
+    {
+        return $this->belongsTo(Partner::class);
+    }
+
     public function getGeoObject(): GeoObjectInterface
     {
-        return AddressGeo::initiateFromGeom(
-            $this->coordination->{
-                CoordinationContract::COORDINATION
-            }
+        return PointObject::initiateFromGeom(
+            $this->coordination->{CoordinationContract::COORDINATION}
         );
     }
 

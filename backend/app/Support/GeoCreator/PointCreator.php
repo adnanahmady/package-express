@@ -8,7 +8,7 @@ use App\Support\GeoCreator\Types\PointType;
 
 class PointCreator implements CreatorInterface
 {
-    public function __construct(private Creator $creator)
+    public function __construct(private readonly Creator $creator)
     {
     }
 

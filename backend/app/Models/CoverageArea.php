@@ -4,8 +4,8 @@ namespace App\Models;
 
 use App\Contracts\Models\CoordinationContract;
 use App\Contracts\Models\CoverageAreaContract;
-use App\ValueObjects\GeoValues\CoverageAreaGeo;
 use App\ValueObjects\GeoValues\GeoObjectInterface;
+use App\ValueObjects\GeoValues\MultiPolygonObject;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
@@ -30,7 +30,7 @@ class CoverageArea extends Model implements CoverageAreaContract
 
     public function getGeoObject(): GeoObjectInterface
     {
-        return CoverageAreaGeo::initiateFromGeom(
+        return MultiPolygonObject::initiateFromGeom(
             $this->coverage->{CoordinationContract::COORDINATION}
         );
     }

@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Api\V1\PartnerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/', [PartnerController::class, 'store'])->name('store');
-Route::get('/{partner}', [PartnerController::class, 'show'])->name('show');
+Route::post('/', [\App\Http\Controllers\Api\V1\PartnerController::class, 'store'])->name('store');
+Route::get('/{partner}', [\App\Http\Controllers\Api\V1\PartnerController::class, 'show'])->name('show');

@@ -5,8 +5,8 @@ namespace Tests\Feature\Partners;
 use App\Http\Resources\Api\V1\Partners\Show;
 use App\Models\Partner;
 use App\Repositories\PartnerRepository;
-use App\ValueObjects\GeoValues\AddressGeo;
-use App\ValueObjects\GeoValues\CoverageAreaGeo;
+use App\ValueObjects\GeoValues\MultiPolygonObject;
+use App\ValueObjects\GeoValues\PointObject;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Testing\TestResponse;
 use Tests\TestCase;
@@ -95,8 +95,8 @@ class ShowTest extends TestCase
             $data['document'],
             $data['ownerName'],
             $data['tradingName'],
-            new AddressGeo($data['address']),
-            new CoverageAreaGeo($data['coverageArea']),
+            PointObject::initiateFromArray($data['address']),
+            MultiPolygonObject::initiateFromArray($data['coverageArea']),
         );
     }
 

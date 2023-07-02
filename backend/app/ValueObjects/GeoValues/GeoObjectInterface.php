@@ -12,9 +12,13 @@ interface GeoObjectInterface
 
     public function __toString(): string;
 
+    public function represent(): string;
+
     public function isA(string $type): bool;
 
     public function toGeomExpression(): Expression;
 
     public static function initiateFromGeom(string $geom): GeoObjectInterface;
+
+    public static function initiateFromArray(array $array): GeoObjectInterface;
 }

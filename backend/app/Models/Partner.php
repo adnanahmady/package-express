@@ -3,8 +3,7 @@
 namespace App\Models;
 
 use App\Contracts\Models\PartnerContract;
-use App\ValueObjects\GeoValues\AddressGeo;
-use App\ValueObjects\GeoValues\CoverageAreaGeo;
+use App\ValueObjects\GeoValues\GeoObjectInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -16,6 +15,7 @@ class Partner extends Model implements PartnerContract
     protected $table = self::TABLE;
     protected $primaryKey = self::ID;
     public $incrementing = false;
+    protected $keyType = 'string';
 
     protected $fillable = [
         self::ID,
@@ -62,12 +62,12 @@ class Partner extends Model implements PartnerContract
         return $this->{self::TRADING_NAME};
     }
 
-    public function getAddress(): AddressGeo
+    public function getAddress(): GeoObjectInterface
     {
         return $this->address->getGeoObject();
     }
 
-    public function getCoverageArea(): CoverageAreaGeo
+    public function getCoverageArea(): GeoObjectInterface
     {
         return $this->coverageArea->getGeoObject();
     }

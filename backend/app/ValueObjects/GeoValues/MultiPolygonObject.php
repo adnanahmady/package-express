@@ -2,6 +2,6 @@
 
 namespace App\ValueObjects\GeoValues;
 
-class AddressGeo extends AbstractGeoJson
+class MultiPolygonObject extends AbstractGeoJson
 {
 }

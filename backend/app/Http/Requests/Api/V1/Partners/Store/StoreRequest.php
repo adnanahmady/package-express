@@ -4,9 +4,9 @@ namespace App\Http\Requests\Api\V1\Partners\Store;
 
 use App\Http\Requests\Api\AbstractFormRequest;
 use App\Models\Partner;
-use App\ValueObjects\GeoValues\AddressGeo;
-use App\ValueObjects\GeoValues\CoverageAreaGeo;
 use App\ValueObjects\GeoValues\GeoObjectInterface;
+use App\ValueObjects\GeoValues\MultiPolygonObject;
+use App\ValueObjects\GeoValues\PointObject;
 
 class StoreRequest extends AbstractFormRequest implements StoreContract
 {
@@ -61,11 +61,13 @@ class StoreRequest extends AbstractFormRequest implements StoreContract
 
     public function getAddress(): GeoObjectInterface
     {
-        return new AddressGeo($this->{self::ADDRESS});
+        return PointObject::initiateFromArray($this->{self::ADDRESS});
     }
 
     public function getCoverageArea(): GeoObjectInterface
     {
-        return new CoverageAreaGeo($this->{self::COVERAGE_AREA});
+        return MultiPolygonObject::initiateFromArray(
+            $this->{self::COVERAGE_AREA}
+        );
     }
 }

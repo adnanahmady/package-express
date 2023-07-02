@@ -2,8 +2,7 @@
 
 namespace App\ValueObjects\GeoValues;
 
-use App\ExceptionMessages\Geo\CoordinatesRequiredMessage;
-use App\ExceptionMessages\Geo\TypeRequiredMessage;
+use App\ExceptionMessages\Geo\InvalidGeoObjectMessage;
 use App\Exceptions\InvalidGeoJsonException;
 use App\Support\Values\SridValue;
 use Illuminate\Database\Query\Expression;
@@ -11,44 +10,45 @@ use Illuminate\Support\Facades\DB;
 
 abstract class AbstractGeoJson implements GeoObjectInterface
 {
-    public const TYPE = 'type';
-    public const COORDINATES = 'coordinates';
-
-    public function __construct(private readonly array $object)
-    {
-        $this->validate($object);
+    public function __construct(
+        private readonly string $type,
+        private readonly array $coordinates,
+    ) {
     }
 
     public function getType(): string
     {
-        return $this->object[self::TYPE];
+        return $this->type;
     }
 
     public function getCoordinates(): array
     {
-        return $this->object[self::COORDINATES];
+        return $this->coordinates;
     }
 
     public function __toString(): string
     {
-        return json_encode($this->object);
+        return $this->represent();
+    }
+
+    public function represent(): string
+    {
+        $json = json_encode([
+            'type' => $this->type,
+            'coordinates' => $this->coordinates
+        ]);
+
+        InvalidGeoJsonException::throwIf(
+            !$json,
+            new InvalidGeoObjectMessage($this)
+        );
+
+        return $json;
     }
 
     public function isA(string $type): bool
     {
-        return $type === $this->object['type'];
-    }
-
-    protected function validate(array $object): void
-    {
-        InvalidGeoJsonException::throwIf(
-            !key_exists(self::TYPE, $object),
-            new TypeRequiredMessage()
-        );
-        InvalidGeoJsonException::throwIf(
-            !key_exists(self::COORDINATES, $object),
-            new CoordinatesRequiredMessage()
-        );
+        return $type === $this->type;
     }
 
     public function toGeomExpression(): Expression
@@ -60,12 +60,17 @@ abstract class AbstractGeoJson implements GeoObjectInterface
         );
     }
 
-    public static function initiateFromGeom(string $geom): GeoObjectInterface
+    public static function initiateFromGeom(string $geom): static
     {
-        return new static(
-            toArray(DB::selectOne(DB::raw(
-                "SELECT ST_AsGeoJSON('$geom') as json",
-            ))->json)
-        );
+        $array = toArray(DB::selectOne(DB::raw(
+            "SELECT ST_AsGeoJSON('$geom') as json",
+        ))->json);
+
+        return static::initiateFromArray($array);
+    }
+
+    public static function initiateFromArray(array $array): static
+    {
+        return new static($array['type'], $array['coordinates']);
     }
 }

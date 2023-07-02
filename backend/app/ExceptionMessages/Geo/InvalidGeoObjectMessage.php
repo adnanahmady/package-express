@@ -7,8 +7,9 @@ use App\ValueObjects\GeoValues\GeoObjectInterface;
 
 class InvalidGeoObjectMessage implements ExceptionMessageInterface
 {
-    public function __construct(private GeoObjectInterface $object)
-    {
+    public function __construct(
+        private readonly GeoObjectInterface $object
+    ) {
     }
 
     public function __toString(): string

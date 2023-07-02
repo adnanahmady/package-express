@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\V1\LocationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::name('partners.')
-    ->prefix('/partners')
-    ->group(base_path('routes/api/v1/partners.php'));
-Route::name('searches.')
-    ->prefix('/searches')
-    ->group(base_path('routes/api/v1/searches.php'));
+Route::get('/nearest', [LocationController::class, 'nearest'])
+    ->name('nearest');

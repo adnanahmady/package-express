@@ -10,7 +10,7 @@ use App\Support\GeoCreator\Types\MultiPolygonType;
 
 class MultiPolygonCreator implements CreatorInterface
 {
-    public function __construct(private Creator $creator)
+    public function __construct(private readonly Creator $creator)
     {
     }
 
@@ -31,10 +31,5 @@ class MultiPolygonCreator implements CreatorInterface
     private function getRepository(): MultiPolygonRepository
     {
         return new MultiPolygonRepository();
-    }
-
-    private function getCreator(): CreatorInterface
-    {
-        return new MultiPolygonCreator($this->creator);
     }
 }
