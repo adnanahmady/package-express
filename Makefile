@@ -38,3 +38,6 @@ test:
 
 coverage:
 	@$(call execute,,composer coverage)
+
+assemble:
+	@$(call execute,,composer assemble)

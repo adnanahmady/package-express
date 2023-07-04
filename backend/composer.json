@@ -47,6 +47,13 @@
             "php-cs-fixer --verbose --diff fix $(pwd)",
             "phpcs -s --standard=$(pwd)/.phpcs.app.xml"
         ],
+        "assemble": [
+            "composer install",
+            "composer run post-root-package-install",
+            "composer run post-create-project-cmd",
+            "composer run post-autoload-dump",
+            "php artisan migrate"
+        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"

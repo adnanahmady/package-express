@@ -12,7 +12,9 @@ file from my coffee shop project which is publicly available to see.
 
 * [Requirements](#requirements)
 * [Usage](#usage)
+  * [Quick start](#quick-start)
   * [Run the application](#run-application)
+  * [Assemble the application bases](#assemble)
   * [Check the status of the application](#status)
   * [Bring down the application](#down)
   * [Destroy the application belongings](#down)
@@ -46,16 +48,35 @@ requiring the `sudo` prefix.
 
 In this section working with the application is described.
 
-## Run Application
+### Quick start
 
-for running application you need to execute `up` method using `make` command
+You can quickly start assemble all the application requirements by running this command.
+
+```shell
+make up assemble
+```
+
+### Run Application
+
+For running application you need to execute `up` method using `make` command
 like bellow:
 
 ```shell
 make up
 ```
 
-## Status
+### Assemble
+
+You can have a quick start by running bellow command.
+
+```shell
+make assemble
+```
+
+This command will install required packages for you and prepares the application
+and the database for you to start.
+
+### Status
 
 If you need to check the project's container states, you can do so
 by one of the bellow commands.
@@ -65,7 +86,7 @@ make ps
 make status
 ```
 
-## Down
+### Down
 
 You can stop the project using bellow command.
 
@@ -73,7 +94,7 @@ You can stop the project using bellow command.
 make down
 ```
 
-## Destroy
+### Destroy
 
 If you wish to destroy the project's allocated volumes and containers
 you can do so like this.
@@ -91,7 +112,7 @@ bellow command.
 make test
 ```
 
-## Coverage Report
+### Coverage Report
 
 You can get a nice test coverage report from the PHPUnit by running
 this command.
