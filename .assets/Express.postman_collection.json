@@ -1,0 +1,344 @@
+{
+	"info": {
+		"_postman_id": "2ffa8eaa-98cf-4066-9cad-0caee32556c7",
+		"name": "Express",
+		"description": "the package express application api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post Partner",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"1\",\n    \"tradingName\": \"Adega Osasco\",\n    \"ownerName\": \"Ze da Ambev\",\n    \"document\": \"02.453.716/000170\",\n    \"coverageArea\": {\n        \"type\": \"MultiPolygon\",\n        \"coordinates\": [\n            [\n                [\n                    [\n                        -43.36556,\n                        -22.99669\n                    ],\n                    [\n                        -43.36539,\n                        -23.01928\n                    ],\n                    [\n                        -43.26583,\n                        -23.01802\n                    ],\n                    [\n                        -43.25724,\n                        -23.00649\n                    ],\n                    [\n                        -43.23355,\n                        -23.00127\n                    ],\n                    [\n                        -43.2381,\n                        -22.99716\n                    ],\n                    [\n                        -43.23866,\n                        -22.99649\n                    ],\n                    [\n                        -43.24063,\n                        -22.99756\n                    ],\n                    [\n                        -43.24634,\n                        -22.99736\n                    ],\n                    [\n                        -43.24677,\n                        -22.99606\n                    ],\n                    [\n                        -43.24067,\n                        -22.99381\n                    ],\n                    [\n                        -43.24886,\n                        -22.99121\n                    ],\n                    [\n                        -43.25617,\n                        -22.99456\n                    ],\n                    [\n                        -43.25625,\n                        -22.99203\n                    ],\n                    [\n                        -43.25346,\n                        -22.99065\n                    ],\n                    [\n                        -43.29599,\n                        -22.98283\n                    ],\n                    [\n                        -43.3262,\n                        -22.96481\n                    ],\n                    [\n                        -43.33427,\n                        -22.96402\n                    ],\n                    [\n                        -43.33616,\n                        -22.96829\n                    ],\n                    [\n                        -43.342,\n                        -22.98157\n                    ],\n                    [\n                        -43.34817,\n                        -22.97967\n                    ],\n                    [\n                        -43.35142,\n                        -22.98062\n                    ],\n                    [\n                        -43.3573,\n                        -22.98084\n                    ],\n                    [\n                        -43.36522,\n                        -22.98032\n                    ],\n                    [\n                        -43.36696,\n                        -22.98422\n                    ],\n                    [\n                        -43.36717,\n                        -22.98855\n                    ],\n                    [\n                        -43.36636,\n                        -22.99351\n                    ],\n                    [\n                        -43.36556,\n                        -22.99669\n                    ]\n                ]\n            ]\n        ]\n    },\n    \"address\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n            -43.297337,\n            -23.013538\n        ]\n    }\n}"
+				},
+				"url": {
+					"raw": "0.0.0.0:80/api/v1/partners",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"v1",
+						"partners"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Partner Created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"1\",\n    \"tradingName\": \"Adega Osasco\",\n    \"ownerName\": \"Ze da Ambev\",\n    \"document\": \"02.453.716/000170\",\n    \"coverageArea\": {\n        \"type\": \"MultiPolygon\",\n        \"coordinates\": [\n            [\n                [\n                    [\n                        -43.36556,\n                        -22.99669\n                    ],\n                    [\n                        -43.36539,\n                        -23.01928\n                    ],\n                    [\n                        -43.26583,\n                        -23.01802\n                    ],\n                    [\n                        -43.25724,\n                        -23.00649\n                    ],\n                    [\n                        -43.23355,\n                        -23.00127\n                    ],\n                    [\n                        -43.2381,\n                        -22.99716\n                    ],\n                    [\n                        -43.23866,\n                        -22.99649\n                    ],\n                    [\n                        -43.24063,\n                        -22.99756\n                    ],\n                    [\n                        -43.24634,\n                        -22.99736\n                    ],\n                    [\n                        -43.24677,\n                        -22.99606\n                    ],\n                    [\n                        -43.24067,\n                        -22.99381\n                    ],\n                    [\n                        -43.24886,\n                        -22.99121\n                    ],\n                    [\n                        -43.25617,\n                        -22.99456\n                    ],\n                    [\n                        -43.25625,\n                        -22.99203\n                    ],\n                    [\n                        -43.25346,\n                        -22.99065\n                    ],\n                    [\n                        -43.29599,\n                        -22.98283\n                    ],\n                    [\n                        -43.3262,\n                        -22.96481\n                    ],\n                    [\n                        -43.33427,\n                        -22.96402\n                    ],\n                    [\n                        -43.33616,\n                        -22.96829\n                    ],\n                    [\n                        -43.342,\n                        -22.98157\n                    ],\n                    [\n                        -43.34817,\n                        -22.97967\n                    ],\n                    [\n                        -43.35142,\n                        -22.98062\n                    ],\n                    [\n                        -43.3573,\n                        -22.98084\n                    ],\n                    [\n                        -43.36522,\n                        -22.98032\n                    ],\n                    [\n                        -43.36696,\n                        -22.98422\n                    ],\n                    [\n                        -43.36717,\n                        -22.98855\n                    ],\n                    [\n                        -43.36636,\n                        -22.99351\n                    ],\n                    [\n                        -43.36556,\n                        -22.99669\n                    ]\n                ]\n            ]\n        ]\n    },\n    \"address\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n            -43.297337,\n            -23.013538\n        ]\n    }\n}"
+						},
+						"url": {
+							"raw": "0.0.0.0:80/api/v1/partners",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "80",
+							"path": [
+								"api",
+								"v1",
+								"partners"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.14.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jul 2023 07:03:04 GMT"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": \"1\",\n        \"owner_name\": \"Ze da Ambev\",\n        \"document\": \"02.453.716/000170\",\n        \"trading_name\": \"Adega Osasco\",\n        \"address\": 1,\n        \"coverage_area\": 1\n    },\n    \"meta\": {\n        \"address\": {\n            \"id\": 1,\n            \"type\": \"Point\",\n            \"coordinates\": [\n                -43.297337,\n                -23.013538\n            ]\n        },\n        \"coverage_area\": {\n            \"id\": 1,\n            \"type\": \"MultiPolygon\",\n            \"coordinates\": [\n                [\n                    [\n                        [\n                            -43.36556,\n                            -22.99669\n                        ],\n                        [\n                            -43.36539,\n                            -23.01928\n                        ],\n                        [\n                            -43.26583,\n                            -23.01802\n                        ],\n                        [\n                            -43.25724,\n                            -23.00649\n                        ],\n                        [\n                            -43.23355,\n                            -23.00127\n                        ],\n                        [\n                            -43.2381,\n                            -22.99716\n                        ],\n                        [\n                            -43.23866,\n                            -22.99649\n                        ],\n                        [\n                            -43.24063,\n                            -22.99756\n                        ],\n                        [\n                            -43.24634,\n                            -22.99736\n                        ],\n                        [\n                            -43.24677,\n                            -22.99606\n                        ],\n                        [\n                            -43.24067,\n                            -22.99381\n                        ],\n                        [\n                            -43.24886,\n                            -22.99121\n                        ],\n                        [\n                            -43.25617,\n                            -22.99456\n                        ],\n                        [\n                            -43.25625,\n                            -22.99203\n                        ],\n                        [\n                            -43.25346,\n                            -22.99065\n                        ],\n                        [\n                            -43.29599,\n                            -22.98283\n                        ],\n                        [\n                            -43.3262,\n                            -22.96481\n                        ],\n                        [\n                            -43.33427,\n                            -22.96402\n                        ],\n                        [\n                            -43.33616,\n                            -22.96829\n                        ],\n                        [\n                            -43.342,\n                            -22.98157\n                        ],\n                        [\n                            -43.34817,\n                            -22.97967\n                        ],\n                        [\n                            -43.35142,\n                            -22.98062\n                        ],\n                        [\n                            -43.3573,\n                            -22.98084\n                        ],\n                        [\n                            -43.36522,\n                            -22.98032\n                        ],\n                        [\n                            -43.36696,\n                            -22.98422\n                        ],\n                        [\n                            -43.36717,\n                            -22.98855\n                        ],\n                        [\n                            -43.36636,\n                            -22.99351\n                        ],\n                        [\n                            -43.36556,\n                            -22.99669\n                        ]\n                    ]\n                ]\n            ]\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Find Partner By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "0.0.0.0:80/api/v1/partners/1",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"v1",
+						"partners",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Find Partner By Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "0.0.0.0:80/api/v1/partners/1",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "80",
+							"path": [
+								"api",
+								"v1",
+								"partners",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.14.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jul 2023 07:11:00 GMT"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": \"1\",\n        \"owner_name\": \"Ze da Ambev\",\n        \"document\": \"02.453.716/000170\",\n        \"trading_name\": \"Adega Osasco\",\n        \"address\": 1,\n        \"coverage_area\": 1\n    },\n    \"meta\": {\n        \"address\": {\n            \"id\": 1,\n            \"type\": \"Point\",\n            \"coordinates\": [\n                -43.297337,\n                -23.013538\n            ]\n        },\n        \"coverage_area\": {\n            \"id\": 1,\n            \"type\": \"MultiPolygon\",\n            \"coordinates\": [\n                [\n                    [\n                        [\n                            -43.36556,\n                            -22.99669\n                        ],\n                        [\n                            -43.36539,\n                            -23.01928\n                        ],\n                        [\n                            -43.26583,\n                            -23.01802\n                        ],\n                        [\n                            -43.25724,\n                            -23.00649\n                        ],\n                        [\n                            -43.23355,\n                            -23.00127\n                        ],\n                        [\n                            -43.2381,\n                            -22.99716\n                        ],\n                        [\n                            -43.23866,\n                            -22.99649\n                        ],\n                        [\n                            -43.24063,\n                            -22.99756\n                        ],\n                        [\n                            -43.24634,\n                            -22.99736\n                        ],\n                        [\n                            -43.24677,\n                            -22.99606\n                        ],\n                        [\n                            -43.24067,\n                            -22.99381\n                        ],\n                        [\n                            -43.24886,\n                            -22.99121\n                        ],\n                        [\n                            -43.25617,\n                            -22.99456\n                        ],\n                        [\n                            -43.25625,\n                            -22.99203\n                        ],\n                        [\n                            -43.25346,\n                            -22.99065\n                        ],\n                        [\n                            -43.29599,\n                            -22.98283\n                        ],\n                        [\n                            -43.3262,\n                            -22.96481\n                        ],\n                        [\n                            -43.33427,\n                            -22.96402\n                        ],\n                        [\n                            -43.33616,\n                            -22.96829\n                        ],\n                        [\n                            -43.342,\n                            -22.98157\n                        ],\n                        [\n                            -43.34817,\n                            -22.97967\n                        ],\n                        [\n                            -43.35142,\n                            -22.98062\n                        ],\n                        [\n                            -43.3573,\n                            -22.98084\n                        ],\n                        [\n                            -43.36522,\n                            -22.98032\n                        ],\n                        [\n                            -43.36696,\n                            -22.98422\n                        ],\n                        [\n                            -43.36717,\n                            -22.98855\n                        ],\n                        [\n                            -43.36636,\n                            -22.99351\n                        ],\n                        [\n                            -43.36556,\n                            -22.99669\n                        ]\n                    ]\n                ]\n            ]\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Search Location",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "0.0.0.0:80/api/v1/searches/nearest?point[lat]=35.258015336177635&point[lon]=50.73372625557943",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"v1",
+						"searches",
+						"nearest"
+					],
+					"query": [
+						{
+							"key": "point[lat]",
+							"value": "35.258015336177635"
+						},
+						{
+							"key": "point[lon]",
+							"value": "50.73372625557943"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Location Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "0.0.0.0:80/api/v1/searches/nearest?point[lat]=35.258015336177635&point[lon]=50.73372625557943",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "80",
+							"path": [
+								"api",
+								"v1",
+								"searches",
+								"nearest"
+							],
+							"query": [
+								{
+									"key": "point[lat]",
+									"value": "35.258015336177635"
+								},
+								{
+									"key": "point[lon]",
+									"value": "50.73372625557943"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.14.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jul 2023 07:29:49 GMT"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": \"abcs\",\n        \"owner_name\": \"Ze da Ambev\",\n        \"document\": \"02.453.716/000170d\",\n        \"trading_name\": \"Adega Osasco\",\n        \"address\": 3,\n        \"coverage_area\": 3\n    },\n    \"meta\": {\n        \"address\": {\n            \"id\": 3,\n            \"type\": \"Point\",\n            \"coordinates\": [\n                51.002379799,\n                35.567004311\n            ]\n        },\n        \"coverage_area\": {\n            \"id\": 3,\n            \"type\": \"MultiPolygon\",\n            \"coordinates\": [\n                [\n                    [\n                        [\n                            51.000755172,\n                            35.703511767\n                        ],\n                        [\n                            50.408210909,\n                            35.738165088\n                        ],\n                        [\n                            50.706993821,\n                            35.16138329\n                        ],\n                        [\n                            51.191574511,\n                            35.395048089\n                        ],\n                        [\n                            51.151402019,\n                            35.691277585\n                        ],\n                        [\n                            51.000755172,\n                            35.703511767\n                        ]\n                    ]\n                ]\n            ]\n        }\n    }\n}"
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}

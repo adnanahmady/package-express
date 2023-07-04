@@ -21,6 +21,7 @@ file from my coffee shop project which is publicly available to see.
 * [Tests](#tests)
   * [Get test coverage report](#coverage-report)
 * [Database Diagram](#diagram)
+* [Postman](#postman)
 
 ## Structure
 
@@ -138,3 +139,8 @@ correct. and using the polymorphic relation the type of the field
 can you restored again.
 
 ![Database diagram](.assets/package-express.png)
+
+# Postman
+
+You can check the generated collection for this application by importing 
+[this postman collection](./.assets/Express.postman_collection.json) into postman.
