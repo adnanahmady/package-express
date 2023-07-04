@@ -36,3 +36,5 @@ logs:
 test:
 	@$(call execute,,composer test)
 
+coverage:
+	@$(call execute,,composer coverage)

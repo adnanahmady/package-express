@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Exceptions;
+namespace App\Exceptions\Mappers;
 
 use App\Traits\Exceptions\HasThrowIfTrait;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
-class InvalidGeoJsonException extends HttpException
+class UnknownParameterException extends HttpException
 {
     use HasThrowIfTrait;
 }

@@ -20,6 +20,8 @@
     <php>
         <server name="DB_HOST" value="database_for_testing" force="true" />
         <env name="APP_ENV" value="testing"/>
+        <env name="OPEN_WEATHER_BASE_URL" value="https://api.example.com" />
+        <env name="OPEN_WEATHER_API_KEY" value="some" />
         <env name="BCRYPT_ROUNDS" value="4"/>
         <env name="CACHE_DRIVER" value="array"/>
         <!-- <env name="DB_CONNECTION" value="sqlite"/> -->

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Exceptions;
+namespace App\Exceptions\ValueValidators;
 
 use App\Traits\Exceptions\HasThrowIfTrait;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
-class InvalidGeoJsonException extends HttpException
+class InvalidValueException extends HttpException
 {
     use HasThrowIfTrait;
 }
