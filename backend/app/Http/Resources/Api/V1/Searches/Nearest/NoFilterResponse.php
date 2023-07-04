@@ -18,7 +18,7 @@ class NoFilterResponse extends JsonResponse implements
     {
         return [
             self::META => [
-                self::MESSAGE => __('You should be able set an enquiry.')
+                self::MESSAGE => __('You should set an enquiry.'),
             ]
         ];
     }

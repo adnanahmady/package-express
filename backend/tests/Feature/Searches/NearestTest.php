@@ -183,7 +183,7 @@ class NearestTest extends TestCase
 
         $this->assertArrayNotHasKey(Nearest\PaginatorResource::DATA, $response);
         $this->assertSame([
-            Nearest\NoFilterResponse::MESSAGE => 'You should be able set an enquiry.'
+            Nearest\NoFilterResponse::MESSAGE => 'You should set an enquiry.'
         ], $response[Nearest\NoFilterResponse::META]);
     }
 
