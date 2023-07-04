@@ -6,7 +6,7 @@ This application provides an API (Application Programming Interface) to deliver 
 explicitly when storing the partners data in the system, but I have done such things in
 my other project's before, therefore if you wish to see how I would done it you can check
 this [OrderRepository](https://github.com/adnanahmady/coffee-shop/blob/main/backend/app/Repositories/OrderRepository.php)
-file from my coffee shop project which is publicly available to see.
+file from my **coffee shop project** which is publicly available to see.
 
 ## Index
 
